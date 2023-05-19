@@ -1,5 +1,4 @@
-from django.test import TestCase, SimpleTestCase
-from .models import Catalogue
+from django.test import SimpleTestCase
 from django.urls import reverse
 from django.urls.base import resolve
 from .views import home
