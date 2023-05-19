@@ -23,4 +23,5 @@ class TestUserProfileModel(TestCase):
         )
         self.assertEqual(f'{self.profile.first_name}', 'Samuel')
         self.assertEqual(f'{self.profile.last_name}', 'Torimiro')
+        self.assertEqual(str(self.profile), 'Samuel')
 
