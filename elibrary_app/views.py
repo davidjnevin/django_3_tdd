@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
-
-def user(request):
-    return render(request, 'user.html')
+from .forms import AddBookForm
 
 def home(request):
-    return HttpResponse("Hello, world! Welcome to Django TDD!")
+
+    add_book_form = AddBookForm()
+
+    return render(request, 'index.html', {
+        "add_book_form": add_book_form,
+    })
