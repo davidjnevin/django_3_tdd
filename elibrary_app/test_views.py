@@ -1,11 +1,12 @@
 from django.test import TestCase
-from .models import Catalogue
 from django.urls import reverse
+
+from .models import Catalogue
 
 
 class CatalogueViewTests(TestCase):
     def test_book_list_view(self):
-        Book_1 = Catalogue.objects.create(
+        Book_1 = Catalogue.objects.create(  # noqa: F841
             title="Django for Beginners (2018)",
             ISBN="978-1-60309-0",
             author="John Doe",
@@ -13,7 +14,7 @@ class CatalogueViewTests(TestCase):
             availability="true",
         )
 
-        Book_2 = Catalogue.objects.create(
+        Book_2 = Catalogue.objects.create(  # noqa: F841
             title="Django for Professionals (2020)",
             ISBN="978-1-60309-3",
             author="Mary Doe",
