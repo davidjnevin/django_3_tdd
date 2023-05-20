@@ -1,9 +1,9 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
 from django.urls import reverse
 from django.urls.base import resolve
 from .views import home
 
-class ElibraryURLsTest(SimpleTestCase):
+class ElibraryURLsTest(TestCase):
     "Test the catalogue URLs"
 
     def test_homepage_url_name(self):
