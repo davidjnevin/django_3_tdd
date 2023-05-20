@@ -1,10 +1,9 @@
-from django.test import SimpleTestCase
-from django.urls.base import resolve
+from django.test import TestCase
 from django.urls import reverse
 from .forms import AddBookForm
 
 
-class CatalogueFormTests(SimpleTestCase):
+class CatalogueFormTests(TestCase):
     def setUp(self):
         url = reverse("home")
         self.response = self.client.get(url)
