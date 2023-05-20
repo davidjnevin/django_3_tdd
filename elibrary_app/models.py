@@ -1,12 +1,19 @@
 from django.db import models
 
-# Create your models here.
 
-class Profile(models.Model):
+class Catalogue(models.Model):
+    STATUS_CHOICES = (
+        ("true", "True"),
+        ("false", "False"),
+    )
 
-    first_name = models.CharField(max_length=255, help_text='Enter your first name')
-    last_name = models.CharField(max_length=255, help_text='Enter your last name')
+    title = models.CharField(max_length=255)
+    ISBN = models.CharField(max_length=13)
+    author = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    availability = models.CharField(
+        max_length=5, choices=STATUS_CHOICES, default="false"
+    )
 
     def __str__(self):
-        return self.first_name
-
+        return self.title
